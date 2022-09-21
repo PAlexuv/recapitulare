@@ -1,4 +1,4 @@
-package LearningJava;
+package ScoalaIt;
 
 public class Numarator {
 
@@ -54,28 +54,10 @@ public class Numarator {
 //            inc--;
 //        }
 
-
-
-
-
-
 //        Scanner scanner = new Scanner(System.in);
 //        int inc = scanner.nextInt();
 //        int fin = scanner.nextInt();
 
-
-
-
-
-
     }
-
-    ////////////////////////////////
-
-
-
-//    public static void count(){
-//        int
-//    }
 
 }

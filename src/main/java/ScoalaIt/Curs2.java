@@ -1,4 +1,4 @@
-package LearningJava;
+package ScoalaIt;
 
 import java.util.Scanner;
 

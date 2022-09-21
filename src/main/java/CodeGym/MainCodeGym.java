@@ -1,18 +1,43 @@
-package LearningJava;
+package CodeGym;
 
-import java.util.Scanner;
-
-public class CodeGym {
+public class MainCodeGym {
 
 
     public static void main(String[] args) {
 
+        DivideDoubleNumbers divide = new DivideDoubleNumbers();
+        divide.divide();
+
+    }
+
+        /*
+        //use(int) to transform double to int(round to the lowest number) - example result = 12.56 it will show 12.0
+        CircleAreaPIDoubleInt circleAreaPIDoubleInt = new CircleAreaPIDoubleInt();
+        System.out.println(circleAreaPIDoubleInt.CircleArea());
+
+
+        //BETWEEN INTERVAL 1 -4 SHOW WHAT I WRITE AS MANY TIMES AS THE NUMBER I WRITE
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
+        int num = scanner.nextInt();
+        do{
+            System.out.println(string);
+            num--;
+        }while(num>0 && num<4);
+    }
+*/
+/*
+        //FACTORIAL
+        multiplyFactorial factorial= new multiplyFactorial();
+        factorial.multiply();
+*/
+/*
         for(int i=0; i<10; i++){
             for(int j=0; j<=i; j++)
                 System.out.print("8");
             System.out.println();
         }
-
+*/
         /*
         int f = 1;
         for (int i = 1; i <= 10; i++)
@@ -132,4 +157,3 @@ public class CodeGym {
     final double PI = 3.14;
 
 */
-}

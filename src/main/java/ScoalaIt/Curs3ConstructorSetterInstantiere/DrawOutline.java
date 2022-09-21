@@ -1,4 +1,4 @@
-package LearningJava.Curs3ConstructorSetterInstantiere;
+package ScoalaIt.Curs3ConstructorSetterInstantiere;
 
 public class DrawOutline {
     public static void drawShapeOutline(int height, int width) {

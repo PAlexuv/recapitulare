@@ -1,6 +1,5 @@
-package LearningJava.Curs3ConstructorSetterInstantiere;
+package ScoalaIt.Curs3ConstructorSetterInstantiere;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 //
 public class Rectangle {
     private double length, width;
@@ -9,6 +8,7 @@ public class Rectangle {
 // un constructor e default format din NUMELE CLASEI FARA PARAMETRI
     public Rectangle(){
     }
+    //OVERLOADING - metode cu acelasi nume DAR difera PARAMETRI: numarul param, tipul, ordinea
     public Rectangle(double length, double width){
         this.width = width;
         this.length = length;

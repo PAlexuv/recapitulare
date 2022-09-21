@@ -1,4 +1,4 @@
-package LearningJava.Curs3ConstructorSetterInstantiere;
+package ScoalaIt.Curs3ConstructorSetterInstantiere;
 
 public class DrawShapeCorners {
 
@@ -25,10 +25,6 @@ public class DrawShapeCorners {
         }
         return false;
     }
-
-
-
-
 }
 
 

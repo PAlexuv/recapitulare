@@ -1,4 +1,4 @@
-package LearningJava;
+package ScoalaIt;
 
 public class Curs1 {
 
