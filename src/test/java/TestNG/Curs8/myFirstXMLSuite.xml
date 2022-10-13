@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite My first Suite">
+
+<test  name="FirstTest Recapitulare Run Smoke Test">
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="TestNG.Curs8.MyFirstTestNgTest"/>
+    </classes>
+</test>
+                        <!-- Test 2 parameters-->
+    <test name="SecondTest Test with parameters">
+        <parameter name="email" value="test@test.ro"></parameter>
+        <parameter name="pass" value="123pass"/>
+        <classes>
+            <class name="TestNG.Curs8.MyFirstTestNgTest">
+                <methods>
+                    <include name="loginWithEmailAndPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test with parameters -->
+
+</suite> <!-- Default Suite -->
