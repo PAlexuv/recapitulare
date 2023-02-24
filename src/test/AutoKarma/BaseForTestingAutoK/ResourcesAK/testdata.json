@@ -1,0 +1,15 @@
+{
+  "account":[
+  {
+    "username" : "",
+    "password" : ""
+  }
+  ],
+
+  "accountErr":[
+    {
+    "userErr": " Date de autentificare incorecte!",
+    "passErr": " Date de autentificare incorecte!"
+    }
+    ]
+}

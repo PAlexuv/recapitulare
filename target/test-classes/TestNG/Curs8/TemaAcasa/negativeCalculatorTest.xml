@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Negative Tests">
+    <test name="Bad Operators">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNG.Curs8.TemaAcasa.HomeworkCalculator">
+<!--                <methods>-->
+<!--                    <include name="testNegativeScenario"/>-->
+<!--                </methods>-->
+            </class> <!-- TestNG.Curs8.TemaAcasa.HomeworkCalculator -->
+        </classes>
+    </test> <!-- Recapitulare -->
+</suite> <!-- Default Suite -->

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Positive Tests">
+    <test name="Positive Testing">
+        <groups>
+            <run>
+                <include name="positive"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNG.Curs8.TemaAcasa.HomeworkCalculator"/>
+        </classes>
+    </test>
+</suite>
+
