@@ -17,12 +17,12 @@ public class BaseUITestDel {
 
     @BeforeClass(alwaysRun = true)
     public void setUP() throws IOException {
-        Properties properties = UtilsdEL.readProperties("src\\test\\resources\\framework.properties");
+        Properties properties = UtilsdEL.readProperties("src\\test\\resources\\frameworkR.properties");
         browser=System.getProperty(browser);
         if(browser==null)
             //read default values from congfig file
         browser= properties.getProperty("browser");
-        hostname= properties.getProperty("hostname");
+        hostname= properties.getProperty("hostnameAK");
         System.out.println("Use browser: " + browser);
         System.out.println("Use browser: " + hostname);
         driver= UtilsdEL.getDriver(browser);

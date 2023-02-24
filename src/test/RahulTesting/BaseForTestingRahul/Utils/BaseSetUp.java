@@ -1,4 +1,4 @@
-package Selenium.Util;
+package BaseForTestingRahul.Utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,22 +9,27 @@ import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 import java.util.Properties;
 
-public class BaseUITest2 {
+public class BaseSetUp {
     protected WebDriver driver;
     String browser;
     protected String hostname;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws IOException {
-        Properties properties = Utils.readProperties("src\\test\\resources\\framework.properties");
+        //read from the frameworkProperties.properties browser and hostname
+        Properties properties = BaseMethodsUtils.readProperties("src/test/RahulTesting/BaseForTestingRahul/Resources/frameworkR.properties");
+
         browser = System.getProperty("browser");
-        if(browser ==null)
-        browser = properties.getProperty("browser");
+        //if there is no browser attributed to (browser==null) than we implement to var browser the browser which is taken from Browsers enum
+        if (browser == null)
+            browser = properties.getProperty("browser");
         System.out.println("Use browser: " + browser);
-        hostname = properties.getProperty("hostnameAK");
+
+        hostname = properties.getProperty("hostname");
         System.out.println("Use next hostname: " + hostname);
 
-        driver = Utils.getDriver(browser);
+        //get the browser type from switch method in baseUtils
+        driver = BaseMethodsUtils.getDriver(browser);
     }
 
     protected void enterValuesOnInput(WebElement el, String value) {
@@ -34,12 +39,11 @@ public class BaseUITest2 {
     }
 
     @AfterMethod
-    public void saveScreenShotAtFailure(ITestResult result) {
+    public void saveScreenShotAtFailure2(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
-            //your screenshooting code goes here
             String testName = result.getMethod().getMethodName();
             System.out.println("Take screen shoot..for test:" + testName);
-            Utils.takeScreenShot(driver, testName);
+            BaseMethodsUtils.takeScreenshot(driver, testName);
         }
     }
 

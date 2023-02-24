@@ -157,7 +157,7 @@ public class testRahulAutomationPractice extends BaseUITest2 {
     }
 
     @Test
-    public void testMouseActionsScrollHover(){
+    public void testMouseHoverActionsScroll(){
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();

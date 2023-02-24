@@ -1,4 +1,4 @@
-package Selenium.Util;
+package baseForTesting.Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -21,15 +21,14 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.Set;
 
-public class Utils {
-
-    public static final String SCREEN_SHOOT_PATH = "\\src\\test\\resources\\screenshotsFirst";
+public class baseUtils {
+    public static final String SCREEN_SHOOT_PATH = "src\\test\\testBunInceput\\baseForTesting\\resources\\screenshotsDouglas";
     public static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
     public static WebDriver getDriver(String browserType){
         WebDriver driver = null;
 
-        switch (Objects.requireNonNull(getBrowserEnumFromString(browserType))) {
+        switch (Objects.requireNonNull(getBrowserEnumFromStrings(browserType))) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
@@ -50,7 +49,7 @@ public class Utils {
 
         return driver;
     }
-    public static Browsers getBrowserEnumFromString(String browserType) {
+    public static Browsers getBrowserEnumFromStrings(String browserType) {
         for (Browsers browser : Browsers.values()) {
             if (browserType.equalsIgnoreCase(browser.toString()))
                 return browser;
@@ -59,15 +58,15 @@ public class Utils {
         return null;
     }
 
-    public static List<WebElement> waitForPresenceOfAllElementsGeneric(WebDriver driver, long timeOut, By by) {
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(
-                ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
     public static WebElement waitForPresenceOfOneElementGeneric(WebDriver driver, long timeOut, By by) {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public static List<WebElement> waitForPresenceOfAllElementsGeneric(WebDriver driver, long timeOut, By by) {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        return wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
     //  read from properties files
@@ -92,7 +91,6 @@ public class Utils {
             System.out.println("Cannot save screen shoots. Please investigate");
         }
     }
-
 
     public static void printCookies(WebDriver driver) {
         Set<Cookie> cookies = driver.manage().getCookies();

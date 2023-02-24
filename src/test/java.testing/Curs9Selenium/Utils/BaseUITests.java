@@ -24,14 +24,14 @@ public class BaseUITests {
     @BeforeClass
     public void setUpBasic() throws IOException{
         //properties
-        Properties prop = UtilsBrowsersWaitScreensCookie.readProperties("src\\test\\resources\\framework.properties");
+        Properties prop = UtilsBrowsersWaitScreensCookie.readProperties("src\\test\\resources\\frameworkProperties.properties.properties");
 
         browser=System.getProperty("browser");
         if (browser==null)
             browser=prop.getProperty("browser");
         System.out.println("Use browser: " + browser);
 
-        hostname = System.getProperty("hostname");
+        hostname = System.getProperty("hostnameAK");
         System.out.println("Use hostname: " + hostname);
 
         dbHostname = System.getProperty("dbHostname");

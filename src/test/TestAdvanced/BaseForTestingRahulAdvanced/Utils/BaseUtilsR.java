@@ -1,4 +1,4 @@
-package Selenium.Util;
+package BaseForTestingRahulAdvanced.Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -21,15 +21,14 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.Set;
 
-public class Utils {
-
-    public static final String SCREEN_SHOOT_PATH = "\\src\\test\\resources\\screenshotsFirst";
+public class BaseUtilsR {
+    public static final String SCREEN_SHOOT_PATHR = "src\\test\\TestAdvanced\\baseForTestingRahul\\Resources\\ScreenshotsRahul";
     public static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
-    public static WebDriver getDriver(String browserType){
+    public static WebDriver getDriver(String browserType) {
         WebDriver driver = null;
 
-        switch (Objects.requireNonNull(getBrowserEnumFromString(browserType))) {
+        switch (Objects.requireNonNull(getBrowserEnumFromTringsR(browserType))) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
@@ -47,27 +46,15 @@ public class Utils {
                 driver = new InternetExplorerDriver();
                 break;
         }
-
         return driver;
     }
-    public static Browsers getBrowserEnumFromString(String browserType) {
-        for (Browsers browser : Browsers.values()) {
+    public static BrowsersR getBrowserEnumFromTringsR(String browserType) {
+        for (BrowsersR browser : BrowsersR.values()) {
             if (browserType.equalsIgnoreCase(browser.toString()))
                 return browser;
         }
         System.out.println("Browser " + browserType + " is not on supported list");
         return null;
-    }
-
-    public static List<WebElement> waitForPresenceOfAllElementsGeneric(WebDriver driver, long timeOut, By by) {
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(
-                ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-    public static WebElement waitForPresenceOfOneElementGeneric(WebDriver driver, long timeOut, By by) {
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(
-                ExpectedConditions.presenceOfElementLocated(by));
     }
 
     //  read from properties files
@@ -82,8 +69,7 @@ public class Utils {
         LocalDateTime currentDate = LocalDateTime.now();
         String dataTimeFormat = currentDate.format(formatter).split("\\.")[0].replaceAll(":", "");
         File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String screnShotName = SCREEN_SHOOT_PATH + "\\screenshot-" + testName + "-" +
-                dataTimeFormat + ".jpeg";
+        String screnShotName = SCREEN_SHOOT_PATHR + "\\screenshot-" + testName + "-" + dataTimeFormat + ".jpeg";
         File saveFile = new File(screnShotName);
         System.out.println("Save screen shoot at path:" + screnShotName);
         try {
@@ -93,6 +79,16 @@ public class Utils {
         }
     }
 
+    public static WebElement waitForPresenceOfOneElementGeneric(WebDriver driver, long timeOut, By by) {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public static List<WebElement> waitForPresenceOfAllElementsGeneric(WebDriver driver, long timeOut, By by) {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        return wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
 
     public static void printCookies(WebDriver driver) {
         Set<Cookie> cookies = driver.manage().getCookies();
@@ -106,4 +102,5 @@ public class Utils {
         } else
             System.out.println("No cookies present");
     }
+
 }
