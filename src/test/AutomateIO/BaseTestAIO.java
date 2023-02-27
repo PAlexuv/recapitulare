@@ -1,4 +1,7 @@
+package AutomateIO;
+
 import AutomationIO.PageObjects.*;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -26,5 +29,4 @@ public class BaseTestAIO extends BasePOPageAIO {
     public void tearDown(){
         closeBrowser();
     }
-
 }

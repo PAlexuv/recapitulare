@@ -1,3 +1,4 @@
+package AutomateIO;
 
 import org.testng.annotations.*;
 
@@ -9,7 +10,7 @@ public class TestHomepageAIO extends BaseTestAIO {
     public void testPageTitle(){
         String pageTitle = homePageAIO.getPageTitle();
         System.out.println("Page title is: " + pageTitle);
-        assertEquals(pageTitle, "automateNow | Automation Made Easy", "Titles do not match");
+        assertEquals(pageTitle, "automateNow | Automation Made Easy", "automateNow | Automation Made Easy");
     }
 
     @Test(description = "Verify first Article Title")

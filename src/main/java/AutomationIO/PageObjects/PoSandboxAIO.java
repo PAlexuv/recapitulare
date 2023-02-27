@@ -31,7 +31,7 @@ public class PoSandboxAIO extends BasePOPageAIO {
     private By cookieAccept = By.id("cookie_action_close_header");
     private By inputField = By.xpath("(//input[@id='g1103-name'])[1]");
     private By dropdownButton = By.cssSelector("#g1103-doyouhaveanysiblings-button");
-    private By dropDownSelect = By.id("g1103-doyouhaveanysiblings");
+    private By dropDownSelect = By.cssSelector("#g1103-doyouhaveanysiblings");
     private By calendarYear = By.xpath("//span[@class='ui-datepicker-year']");
     private By calendarMonth = By.xpath("//span[@class='ui-datepicker-month']");
     private By calendarField = By.id("g1065-selectorenteradate");
@@ -51,9 +51,6 @@ public class PoSandboxAIO extends BasePOPageAIO {
     private By paragraphSimpleModal = By.xpath("//p[contains(text(),'Hi, I’m a simple modal.')]");
     private By hoverOverText = By.id("mouse_over");
 
-    public void clickFormFieldButton() {
-        click(buttonFormField);
-    }
 
     public void clickTablesButton() {
         click(buttonTables);
@@ -89,7 +86,7 @@ public class PoSandboxAIO extends BasePOPageAIO {
 
     public PoSandboxAIO setInputFieldText(String myText) {
         wait.until(ExpectedConditions.presenceOfElementLocated(buttonFormField));
-        clickFormFieldButton();
+        click(buttonFormField);
         setText(inputField, myText);
         return this;
     }
@@ -104,36 +101,34 @@ public class PoSandboxAIO extends BasePOPageAIO {
      * @param value range 1 to 3
      */
     public PoSandboxAIO selectCheckBox(String value) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(buttonFormField));
-        clickFormFieldButton();
+        click(buttonFormField);
 //not setting the BY up as the other private because we need to change the values of the element with a value that we enter
 //By from up are always static, always the same
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@value='Water']")));
         driver.findElement(By.xpath("//input[@value='" + value + "']")).click();
 //return handle to the SandBox PAge and we use this
         return this;
     }
-
     public boolean checkboxSelectedIS(String value) {
-        clickFormFieldButton();
         return driver.findElement(By.xpath("//input[@value='" + value + "']")).isSelected();
     }
 
     /**
      * Select Dropdown
      */
-
     public PoSandboxAIO selectDropdown(String option) throws InterruptedException {
-        clickFormFieldButton();
-        driver.findElement(dropdownButton).click();
-        Thread.sleep(2000);
+        click(buttonFormField);
+////        driver.findElement(dropdownButton).click();
+//        click(cookieAccept);
+//        click(dropdownButton);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(dropdownButton));
+//        Thread.sleep(2000);
         Select dDown = new Select(driver.findElement(dropDownSelect));
         dDown.selectByValue(option);
         return this;
     }
-
     public String getDropdownText() {
-        clickFormFieldButton();
-//        driver.findElement(dropdownButton).click();
+//        click(buttonFormField);
         Select dDown = new Select(driver.findElement(dropDownSelect));
         return dDown.getFirstSelectedOption().getText();
     }
@@ -142,11 +137,10 @@ public class PoSandboxAIO extends BasePOPageAIO {
      * Selected Radio Button
      */
     public PoSandboxAIO selectRadioButton(String selectedRadioButton) {
-        clickFormFieldButton();
+        click(buttonFormField);
         driver.findElement(By.cssSelector("input[value='" + selectedRadioButton + "']")).click();
         return this;
     }
-
     public boolean selectedRadioButtonIS(String selectedRadioButton) {
         return driver.findElement(By.cssSelector("input[value='" + selectedRadioButton + "']")).isSelected();
     }

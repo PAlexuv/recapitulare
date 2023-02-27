@@ -1,3 +1,5 @@
+package PrisacaBarnova;
+
 import PrisacaBarnova.PageObjects.PoHomePagePB;
 import org.testng.Assert;
 import org.testng.annotations.Test;

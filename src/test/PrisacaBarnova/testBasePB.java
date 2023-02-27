@@ -1,3 +1,5 @@
+package PrisacaBarnova;
+
 import PrisacaBarnova.PageObjects.PoBasePagePB;
 import PrisacaBarnova.PageObjects.PoHomePagePB;
 import PrisacaBarnova.PageObjects.PoNavBarPB;

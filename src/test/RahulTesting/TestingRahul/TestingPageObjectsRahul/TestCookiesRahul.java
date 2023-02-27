@@ -1,4 +1,4 @@
-package TestingRahul.TestingPageObjectsRahul;
+package RahulTesting.TestingRahul.TestingPageObjectsRahul;
 
 import BaseForTestingRahul.Utils.BaseMethodsUtils;
 import BaseForTestingRahul.Utils.BaseSetUp;

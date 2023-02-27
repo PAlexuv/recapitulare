@@ -1,4 +1,4 @@
-package TestingRahul.TestingPageObjectsRahul;
+package RahulTesting.TestingRahul.TestingPageObjectsRahul;
 
 import BaseForTestingRahul.Utils.BaseSetUp;
 import TestingRahul.PageObjectsRahul.GetWHandleSwitchTabAlertHoverPO;

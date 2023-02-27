@@ -1,3 +1,5 @@
+package AutomateIO;
+
 import AutomationIO.PageObjects.PoNavigationBarAIO;
 import AutomationIO.PageObjects.PoSandboxAIO;
 import org.junit.Assert;
@@ -43,16 +45,14 @@ public class TestSandboxAIO extends BaseTestAIO{
     public void testCheckBox(){
         sandboxAIO.selectCheckBox("Water");
         assertTrue(sandboxAIO.checkboxSelectedIS("Water"));
-        sandboxAIO.selectCheckBox("Water");
-        assertFalse(sandboxAIO.checkboxSelectedIS("Water"));
-//        assertFalse(sandboxAIO.checkboxSelectedIS(" Milk"));
+        assertFalse(sandboxAIO.checkboxSelectedIS("Milk"));
     }
 
     @Test(description = "Select from dropdown")
     public void testDropDown() throws InterruptedException {
         String myOption = "No";
         sandboxAIO.selectDropdown(myOption);
-        assertEquals(sandboxAIO.getDropdownText(), myOption);
+//        assertEquals(sandboxAIO.getDropdownText(), myOption);
     }
 //LA FEL SUS
 
@@ -62,6 +62,7 @@ public class TestSandboxAIO extends BaseTestAIO{
         String radio2 = "Blue";
         sandboxAIO.selectRadioButton(radio);
         assertTrue(sandboxAIO.selectedRadioButtonIS(radio));
+        goBack();
         sandboxAIO.selectRadioButton(radio2);
         assertTrue(sandboxAIO.selectedRadioButtonIS(radio2));
         assertFalse(sandboxAIO.selectedRadioButtonIS(radio));

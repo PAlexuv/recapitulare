@@ -1,3 +1,5 @@
+package PrisacaBarnova;
+
 import PrisacaBarnova.PageObjects.PoNavBarPB;
 import PrisacaBarnova.PageObjects.PoStupinaPB;
 import org.testng.Assert;

@@ -1,4 +1,4 @@
-package TestingRahul.TestingPageObjectsRahul;
+package RahulTesting.TestingRahul.TestingPageObjectsRahul;
 
 import TestingRahul.PageObjectsRahul.RadioButSelectDropdwnCheckBoxPO;
 import BaseForTestingRahul.Utils.BaseSetUp;

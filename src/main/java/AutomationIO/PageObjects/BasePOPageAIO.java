@@ -24,7 +24,6 @@ public class BasePOPageAIO {
 
     protected static WebDriver driver;
 
-
     public String browser;
     public String baseUrl;
     public Properties properties;
